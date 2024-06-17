@@ -71,6 +71,7 @@ p {
     width: 30%;
     position: relative;
     overflow: hidden;
+    background: rgb(255, 255, 255);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -84,7 +85,7 @@ p {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgb(255, 255, 255);
     color: #993399;
     text-align: center;
     padding: 10px;

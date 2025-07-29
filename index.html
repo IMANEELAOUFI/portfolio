@@ -3,807 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imane Elaoufi - AI & Data Science Engineer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Imane Elaoufi Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-            --accent-color: #06b6d4;
-            --text-primary: #ffffff;
-            --text-secondary: #e2e8f0;
-            --text-muted: #94a3b8;
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: rgba(30, 41, 59, 0.8);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: Arial, sans-serif;
         }
-
-        /* Animated background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
-            z-index: -1;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(1deg); }
-            66% { transform: translateY(10px) rotate(-1deg); }
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            padding: 10px 30px;
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateX(-50%) translateY(-100px); opacity: 0; }
-            to { transform: translateX(-50%) translateY(0); opacity: 1; }
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin: 0 20px;
-            padding: 8px 16px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--text-primary);
-            background: var(--glass-bg);
-            transform: translateY(-2px);
-        }
-
-        nav a.active {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-        }
-
-        /* Header/Hero Section */
         header {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .hero-greeting {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            animation: fadeInUp 1s ease-out 0.5s both;
-        }
-
-        .hero-name {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out 0.7s both;
-        }
-
-        .hero-title {
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.9s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            margin-top: 20px;
+            height: 400px;
+            background-color: SlateBlue
+;
             color: white;
+            
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 50px;
+            background-color: white;
+            height: 10px;
+
+        }
+        nav a {
+            margin: 0 15px;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease-out 1.1s both;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            color: #993399;
+            font-weight: bold;
         }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        nav a:hover {
+            color: #550055;
         }
-
-        /* Floating particles */
-        .particle {
-            position: absolute;
-            background: var(--accent-color);
-            border-radius: 50%;
-            opacity: 0.1;
-            animation: floatUp 15s infinite linear;
-        }
-
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.1; }
-            90% { opacity: 0.1; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-        }
-
-        /* Sections */
-        .section {
-            padding: 100px 0;
-            position: relative;
-        }
-
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
             padding: 0 20px;
         }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 60px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .profile-image {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            filter: grayscale(20%);
-            transition: filter 0.3s ease;
-        }
-
-        .profile-image:hover img {
-            filter: grayscale(0%);
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .skill-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .skill-card:hover::before {
-            left: 100%;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-            border-color: var(--primary-color);
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .skill-name {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Experience Section */
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-
-        .project-info {
-            padding: 25px;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 10px;
-        }
-
-        /* Education & Certifications */
-        .timeline {
-            position: relative;
-            margin-top: 40px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            margin: 50px 0;
-            position: relative;
-        }
-
-        .timeline-content {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
-            width: 45%;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 55%;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: 55%;
-        }
-
-        .timeline-content:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
-        }
-
-        .timeline-date {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            z-index: 10;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: var(--text-secondary);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
-            color: var(--text-primary);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                padding: 8px 20px;
-                width: 90%;
-            }
-
-            nav a {
-                margin: 0 10px;
-                font-size: 0.9rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: center;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-content {
-                width: calc(100% - 60px);
-                margin-left: 60px !important;
-                margin-right: 0 !important;
-            }
-
-            .timeline-date {
-                left: 20px;
-                transform: translateY(-50%);
-            }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .section {
+            margin-bottom: 0.9px;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<nav id="navig">
+    <a href="#accueil">Accueil</a>
+    <a href="#competences">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#Certifications">Certifications</a>
+    <a href="#formation">Eduaction</a>
+    <a href="#contact">Contact</a>
+</nav>
+<header>
+    <h1>Hi👋. I'M IMANE ELAOUFI</h1>
+    <p>ARTIFICIAL INTELLIGENCE & DATA SCIENCE ENGINEER</p>
+</header>
 
-    <!-- Hero Section -->
-    <header id="home">
-        <div class="hero-content">
-            <div class="hero-greeting">👋 Hi there! I'm</div>
-            <h1 class="hero-name">IMANE ELAOUFI</h1>
-            <p class="hero-title">AI & Data Science Engineer</p>
-            <a href="#about" class="cta-button">Discover My Work</a>
-        </div>
-        
-        <!-- Floating particles -->
-        <div class="particle" style="left: 10%; width: 4px; height: 4px; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 20%; width: 6px; height: 6px; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 30%; width: 3px; height: 3px; animation-delay: 4s;"></div>
-        <div class="particle" style="left: 40%; width: 5px; height: 5px; animation-delay: 6s;"></div>
-        <div class="particle" style="left: 50%; width: 4px; height: 4px; animation-delay: 8s;"></div>
-        <div class="particle" style="left: 60%; width: 6px; height: 6px; animation-delay: 10s;"></div>
-        <div class="particle" style="left: 70%; width: 3px; height: 3px; animation-delay: 12s;"></div>
-        <div class="particle" style="left: 80%; width: 5px; height: 5px; animation-delay: 14s;"></div>
-        <div class="particle" style="left: 90%; width: 4px; height: 4px; animation-delay: 16s;"></div>
-    </header>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="about-content fade-in">
-                <div class="profile-image">
-                    <div style="width: 100%; height: 500px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p>I am Imane Elaoufi, a passionate AI and Data Science Engineer from the Faculty of Sciences and Techniques in Tangier. My academic journey has equipped me with a robust foundation in programming, mathematics, and data analysis, alongside deep expertise in artificial intelligence and machine learning.</p>
-                    
-                    <p>I'm driven by the potential to leverage cutting-edge technology to solve complex real-world problems and create innovative solutions that make a meaningful impact. My focus lies in pushing the boundaries of what's possible in AI and data science, continuously learning and adapting to the rapidly evolving technological landscape.</p>
-                </div>
+<div class="container">
+    <div id="accueil" class="section">
+        <div style="display: flex; align-items: center; margin-bottom: 20px; padding-top: 40px;">
+            <img style="height: 500px; width: 400px;" src="assets/assets/WhatsApp Image 2024-06-17 at 18.29.07.jpeg" alt="Profile Picture">
+            <div>
+                <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>About me</b></h1>
+                <p>I am Imane Elaoufi, a laureate in Artificial Intelligence and Data Science from the Faculty of Sciences and Techniques in Tanger. My academic background has equipped me with a strong foundation in programming, mathematics, and data analysis, as well as a deep understanding of AI and machine learning principles. I am passionate about leveraging these skills to solve complex problems and create innovative solutions that can make a real-world impact. As I continue to advance my education, I am eager to apply my knowledge and expertise to projects that push the boundaries of what is possible in the field of AI and data science.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Skills & Technologies</h2>
-            <div class="skills-grid fade-in">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                    <div class="skill-name">Python</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <div class="skill-name">Machine Learning</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                    <div class="skill-name">Deep Learning</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-comments"></i></div>
-                    <div class="skill-name">NLP</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                    <div class="skill-name">Data Mining</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-java"></i></div>
-                    <div class="skill-name">Java</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <div class="skill-name">Databases</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-php"></i></div>
-                    <div class="skill-name">PHP</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-stream"></i></div>
-                    <div class="skill-name">Kafka</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                    <div class="skill-name">Docker</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-                    <div class="skill-name">Cloud</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                    <div class="skill-name">Git</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Professional Experience</h2>
-            <div class="experience-grid fade-in">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">AI-Driven Workflow Automation</h3>
-                        <p>End-of-study internship focusing on automating business requests through artificial intelligence solutions.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-smile"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Facial Emotion Recognition & Sign Language</h3>
-                        <p>AI system for emotion detection and sign language translation using computer vision and deep learning.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Closed Circuit Communication App</h3>
-                        <p>Mobile application development for secure, closed-circuit communication systems.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Data Analysis Desktop Application</h3>
-                        <p>Desktop application for comprehensive dataset analysis and visualization.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Real-time Twitter Sentiment Analysis</h3>
-                        <p>Real-time sentiment prediction system for Twitter data feeds using NLP techniques.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">NLP Chatbot for FSTT</h3>
-                        <p>Natural Language Processing chatbot developed for the Faculty of Sciences and Technology.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Certifications</h2>
-            <div class="timeline fade-in">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Oracle AI Vector Search Professional</h3>
-                        <p>Oracle - Advanced vector search capabilities and AI integration</p>
-                    </div>
-                    <div class="timeline-date">May 2025</div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Fundamentals of AI Agents</h3>
-                        <p>Hugging Face - Core concepts and implementation of AI agents</p>
-                    </div>
-                    <div class="timeline-date">Apr 2025</div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Machine Learning Specialization</h3>
-                        <p>Coursera & DeepLearning.AI with Stanford University</p>
-                    </div>
-                    <div class="timeline-date">Apr 2024</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Education</h2>
-            <div class="timeline fade-in">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Master's in AI & Data Sciences</h3>
-                        <p>Faculty of Science and Technology, Tangier</p>
-                    </div>
-                    <div class="timeline-date">2023-2025</div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Bachelor's in Computer Science</h3>
-                        <p>Faculty of Science and Technology, Tangier</p>
-                    </div>
-                    <div class="timeline-date">2022-2023</div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>DEUST in MIP</h3>
-                        <p>Mathematics, Computer Science, Physics - FST Tangier</p>
-                    </div>
-                    <div class="timeline-date">2020-2022</div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Baccalaureate in Mathematical Sciences</h3>
-                        <p>Lycée AL MANSOUR EDDAHBI, Sidi Kacem - French Option</p>
-                    </div>
-                    <div class="timeline-date">2019-2020</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Let's Connect</h2>
-            <div class="contact-grid fade-in">
-                <a href="mailto:amounaela1@gmail.com" class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Email</h3>
-                    <p>amounaela1@gmail.com</p>
-                </a>
-                
-                <a href="https://www.linkedin.com/in/imane-elaoufi-024451254/" class="contact-card" target="_blank">
-                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                    <h3>LinkedIn</h3>
-                    <p>Imane Elaoufi</p>
-                </a>
-                
-                <a href="https://github.com/IMANEELAOUFI" class="contact-card" target="_blank">
-                    <div class="contact-icon"><i class="fab fa-github"></i></div>
-                    <h3>GitHub</h3>
-                    <p>IMANEELAOUFI</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Smooth scrolling navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // Update active nav item
-                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Update active nav on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section, header');
-            const navLinks = document.querySelectorAll('nav a');
+    <div id="competences" class="section">
+        <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Skills and Qualities</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <div class="skills-container">
+          <div class="skills">
+            <img src="assets/assets/téléchargement (4).png" alt="PHP">
             
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
+          </div>
+          <div class="skills">
+            <img src="assets/assets/téléchargement.jpg" alt="PHP">
+            
+          </div>
+          <div class="skills">
+            <img src="assets/assets/téléchargement (3).png" alt="PHP">
+            
+          </div>
+          <div class="skills">
+            <img src="assets/assets/téléchargement (5).png" alt="PHP">
+            
+          </div>
+          <div class="skills">
+            <img src="assets/assets/téléchargement (6).png" alt="PHP">
+            
+        </div>
+        <div class="skills">
+            <img src="assets/assets/téléchargement (7).png" alt="PHP">
+           
+        </div>
+        <div class="skills">
+            <img src="assets/assets/téléchargement (1).jpg" alt="PHP">
+            
+        </div>
+        <div class="skills">
+            <img src="assets/assets/ML.png" alt="ML">
+            
+        </div>
+        <div class="skills">
+            <img src="assets/assets/NLP.png" alt="NLP">
+            
+        </div>
+        <div class="skills">
+            <img src="assets/assets/DTM.png" alt="DTM">
+            
+        </div>
+        <div class="skills">
+            <img src="assets/assets/téléchargement (8).png" alt="PHP">
+            
+        </div>
+        <div class="skills">
+            <img src="assets/assets/kfk.png" alt="KFK">
+            
+        </div>
+        </div>
+      </div>
+    
 
-            navLinks.forEach(link => {
-                link
+    <div id="experience" class="section">
+        <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Professional experience / Study projects</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <div class="experience">
+            <div class="project">
+                <img src="assets/assets/exp.png" alt="Project 1">
+                <div class="overlay">
+                    <h2>End-Of-Study internship "AI-Driven Workflow Automation For Business Requests"</h2>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/assets/téléchargement.jpeg" alt="Project 1">
+                <div class="overlay">
+                    <h2>End-Of-Year internship "Artificial Intelligence Systems - Facial Emotion Recognition and Sign Language Translation"</h2>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/assets/téléchargement.jpeg" alt="Project 1">
+                <div class="overlay">
+                    <h2>End-Of-Study internship "Mobile application for closed circuit communication"</h2>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/assets/téléchargement.png" alt="Project 1">
+                <div class="overlay">
+                    <h2>Desktop application for analyzing data sets</h2>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/assets/images.jpeg" alt="Project 1">
+                <div class="overlay">
+                    <h2>Real-time sentiment prediction of Twitter social network data feeds</h2>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/assets/téléchargement (9).png" alt="Project 1">
+                <div class="overlay">
+                    <h2>NLP Chatbot Project for FSTT</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div id="Certifications" class="section">
+        <h1 style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Certifications</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <div class="education master">
+            <h2>Oracle AI Vector Search Professional</h2>
+            <h3>Oracle, May 2025</h3>
+          </div>
+          
+        <div class="education bachelor">
+            <h2>Fundamentals of AI Agents</h2>
+            <h3>Hugging Face, April 2025</h3>
+        </div>
+        <div class="education deust">
+            <h2>Machine Learning Specialization</h2>
+            <h3>Coursera & Deeplearning.AI and Stanford University, April 2024</h3>
+        </div>
+    </div>
+
+    <div id="formation" class="section">
+        <h1 style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Education</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <div class="education master">
+            <h2>Master's Degree in Artificial Intelligence & Data Sciences</h2>
+            <h3>Faculty of Science and Technology TANGIER, 2023-2025</h3>
+          </div>
+          
+        <div class="education bachelor">
+            <h2>Bachelor's Degree in Computer Science</h2>
+            <h3>Faculty of Science and Technology TANGIER, 202262023</h3>
+        </div>
+        <div class="education deust">
+            <h2>Diploma of Scientific and Technical University Studies</h2>
+            <h3>Faculty of Science and Technology TANGIER, 2020-2022</h3>
+            <ul>
+              <li>Mathematics, Computer Science, Physics (MIP)</li>
+            </ul>
+        </div>
+        <div class="education baccalaureate">
+            <h2>Baccalaureate in mathematical sciences A – French option </h2>
+            <h3>Lycée AL MANSOUR EDDAHBI Sidi Kacem, 2019-2020</h3>
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <h1 style="color: black; padding-top: 20px; padding-left: 20px; padding-bottom: 20px"><b>Contact</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <div class="contact-info">
+            <ul style="list-style: none; padding-left: 25px;">
+                <p>You can contact me via social networks or by email:</p>
+                <li style="padding-bottom: 20px;">
+                    <a href="mailto:amounaela1@gmail.com" style="text-decoration: none; color: black;"><b style="color: #993399">Email :</b> amounaela1@gmail.com</a>
+                </li>
+                <li style="padding-bottom: 20px;">
+                    <a href="https://www.linkedin.com/in/imane-elaoufi-024451254/" style="text-decoration: none; color: black; padding-bottom: 10px;"><b style="color: #993399">Linkedin:</b>Imane Elaoufi</a>
+                </li>
+                <li style="padding-bottom: 20px;">
+                    <a href="https://github.com/IMANEELAOUFI" style="text-decoration: none; color: black; padding-bottom: 10px;"><b style="color: #993399">Github:</b>IMANEELAOUFI</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

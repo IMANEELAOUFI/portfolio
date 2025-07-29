@@ -8,37 +8,174 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         header {
             text-align: center;
-            margin-top: 20px;
-            height: 400px;
-            background-color: SlateBlue
-;
+            padding: 80px 20px;
+            background-color: SlateBlue;
             color: white;
-            
+            position: relative;
         }
         nav {
             text-align: center;
-            margin-bottom: 50px;
             background-color: white;
-            height: 10px;
-
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             margin: 0 15px;
             text-decoration: none;
             color: #993399;
             font-weight: bold;
+            padding: 5px 0;
         }
         nav a:hover {
             color: #550055;
         }
         .container {
-            padding: 0 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
         }
         .section {
-            margin-bottom: 0.9px;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+        .section h1 {
+            color: black;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #993399;
+            margin-bottom: 20px;
+        }
+        #accueil {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            padding-top: 40px;
+        }
+        #accueil img {
+            height: 500px;
+            width: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        #accueil div {
+            flex: 1;
+            min-width: 300px;
+        }
+        #accueil h1 {
+            color: black;
+            padding-top: 0;
+            padding-left: 0;
+            padding-bottom: 10px;
+            border-bottom: none;
+        }
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        .skills img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        .experience {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .project {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .project .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+        .project:hover .overlay {
+            opacity: 1;
+        }
+        .education {
+            margin-bottom: 25px;
+            border-left: 4px solid SlateBlue;
+            padding-left: 15px;
+        }
+        .education h2 {
+            margin-top: 0;
+            color: #993399;
+        }
+        .education h3 {
+            margin: 5px 0 10px 0;
+            color: #555;
+        }
+        .education ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .contact-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .contact-info li {
+            margin-bottom: 15px;
+        }
+        .contact-info a {
+            text-decoration: none;
+            color: black;
+        }
+        .contact-info a b {
+            color: #993399;
+        }
+
+        /* Certifications Section Styling */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .certification-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .certification-item h3 {
+            color: #993399;
+            margin-top: 0;
+        }
+        .certification-item p {
+            margin-bottom: 5px;
+            color: #555;
         }
     </style>
 </head>
@@ -47,163 +184,179 @@
     <a href="#accueil">Accueil</a>
     <a href="#competences">Skills</a>
     <a href="#experience">Experience</a>
-    <a href="#formation">Eduaction</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#formation">Education</a>
     <a href="#contact">Contact</a>
 </nav>
+
 <header>
     <h1>Hi👋. I'M IMANE ELAOUFI</h1>
-    <p>LAST-YEAR MASTER'S STUDENT IN ARTIFICIAL INTELLIGENCE & DATA SCIENCE</p>
+    <p>LAUREATE IN ARTIFICIAL INTELLIGENCE & DATA SCIENCE</p>
 </header>
-
 
 <div class="container">
     <div id="accueil" class="section">
-        <div style="display: flex; align-items: center; margin-bottom: 20px; padding-top: 40px;">
-            <img style="height: 500px; width: 400px;" src="assets/assets/WhatsApp Image 2024-06-17 at 18.29.07.jpeg" alt="Profile Picture">
-            <div>
-                <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>About me</b></h1>
-                <p>I am Imane Elaoufi, a current master's student in Artificial Intelligence and Data Science at the Faculty of Sciences and Techniques in Tanger. My academic background has equipped me with a strong foundation in programming, mathematics, and data analysis, as well as a deep understanding of AI and machine learning principles. I am passionate about leveraging these skills to solve complex problems and create innovative solutions that can make a real-world impact. As I continue to advance my education, I am eager to apply my knowledge and expertise to projects that push the boundaries of what is possible in the field of AI and data science.</p>
-            </div>
+        <img src="assets/assets/WhatsApp Image 2024-06-17 at 18.29.07.jpeg" alt="Profile Picture">
+        <div>
+            <h1><b>About me</b></h1>
+            <p>I am Imane Elaoufi, a laureate in Artificial Intelligence and Data Science from the Faculty of Sciences and Techniques in Tanger. My academic background has equipped me with a strong foundation in programming, mathematics, and data analysis, as well as a deep understanding of AI and machine learning principles. I am passionate about leveraging these skills to solve complex problems and create innovative solutions that can make a real-world impact. I am eager to apply my knowledge and expertise to projects that push the boundaries of what is possible in the field of AI and data science.</p>
         </div>
     </div>
 
     <div id="competences" class="section">
-        <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Skills and Qualities</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <h1><b>Skills and Qualities</b></h1>
         <div class="skills-container">
-          <div class="skills">
-            <img src="assets/assets/téléchargement (4).png" alt="PHP">
-            
-          </div>
-          <div class="skills">
-            <img src="assets/assets/téléchargement.jpg" alt="PHP">
-            
-          </div>
-          <div class="skills">
-            <img src="assets/assets/téléchargement (3).png" alt="PHP">
-            
-          </div>
-          <div class="skills">
-            <img src="assets/assets/téléchargement (5).png" alt="PHP">
-            
-          </div>
-          <div class="skills">
-            <img src="assets/assets/téléchargement (6).png" alt="PHP">
-            
+            <div class="skills">
+                <img src="assets/assets/téléchargement (4).png" alt="PHP">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/téléchargement.jpg" alt="Python">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/téléchargement (3).png" alt="Java">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/téléchargement (5).png" alt="SQL">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/téléchargement (6).png" alt="React">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/téléchargement (7).png" alt="FastAPI">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/téléchargement (1).jpg" alt="Flask">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/ML.png" alt="Machine Learning">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/NLP.png" alt="NLP">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/DTM.png" alt="Deep Learning">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/téléchargement (8).png" alt="Docker">
+            </div>
+            <div class="skills">
+                <img src="assets/assets/kfk.png" alt="Kafka">
+            </div>
         </div>
-        <div class="skills">
-            <img src="assets/assets/téléchargement (7).png" alt="PHP">
-           
-        </div>
-        <div class="skills">
-            <img src="assets/assets/téléchargement (1).jpg" alt="PHP">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/ML.png" alt="ML">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/NLP.png" alt="NLP">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/DTM.png" alt="DTM">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/téléchargement (8).png" alt="PHP">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/kfk.png" alt="KFK">
-            
-        </div>
-        </div>
-      </div>
-    
+    </div>
 
     <div id="experience" class="section">
-        <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Professional experience / Study projects</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <h1><b>Professional Experience / Academic Projects</b></h1>
         <div class="experience">
             <div class="project">
-                <img src="assets/assets/téléchargement.jpeg" alt="Project 1">
+                <img src="assets/assets/téléchargement.jpeg" alt="AI-Driven Business Workflow Automation">
                 <div class="overlay">
-                    <h2>End-Of-Year internship "Artificial Intelligence Systems - Facial Emotion Recognition and Sign Language Translation"</h2>
+                    [cite_start]<h2>Final Year Internship: AI-Driven Business Workflow Automation [cite: 10]</h2>
+                    <p>Developed an AI-based business workflow automation solution using Elsa Workflows. [cite_start]Integrated NLP and intelligent agents to facilitate workflow creation, optimization, and documentation, making AI interactions conversational and accessible. [cite: 11, 13] [cite_start]Technologies: NLP, LLM, RAG, LangGraph, Adk, Crewai, ChromaDB, FastAPI, React. [cite: 14]</p>
                 </div>
             </div>
             <div class="project">
-                <img src="assets/assets/téléchargement.jpeg" alt="Project 1">
+                <img src="assets/assets/téléchargement.jpeg" alt="Facial Emotion Recognition and Sign Language Translation">
                 <div class="overlay">
-                    <h2>End-Of-Study internship "Mobile application for closed circuit communication"</h2>
+                    [cite_start]<h2>Undergraduate Internship: AI Systems - Facial Emotion Recognition and Sign Language Translation [cite: 16]</h2>
+                    [cite_start]<p>Created an intelligent system capable of detecting facial emotions and translating sign language gestures in real-time. [cite: 19] Combined CNN models for emotion recognition and machine learning algorithms for sign interpretation. [cite_start]Integrated into an interactive web application with React.js, Vite, and Flask. [cite: 20, 21] [cite_start]Technologies: CNN, MediaPipe Hands, Random Forest Classifier, OpenCV, React.js, Vite, Flask. [cite: 22]</p>
                 </div>
             </div>
             <div class="project">
-                <img src="assets/assets/téléchargement.png" alt="Project 1">
+                <img src="assets/assets/téléchargement.jpeg" alt="Mobile Development Internship">
+                <div class="overlay">
+                    [cite_start]<h2>Mobile Development Internship [cite: 24]</h2>
+                    [cite_start]<p>Developed a mobile application enabling secure communication between employees, supporting text messages, images, important documents, and user management via an admin account. [cite: 28] [cite_start]Technologies: React Native, Postman API, Laravel, JavaScript, TypeScript, PHP, HTML, CSS, MySQL. [cite: 29]</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/assets/téléchargement (9).png" alt="Intelligent Chatbot">
+                <div class="overlay">
+                    [cite_start]<h2>Academic Project: Development of an Intelligent Chatbot [cite: 32]</h2>
+                    [cite_start]<p>Developed a chatbot using Retrieval-Augmented Generation (RAG) to improve response accuracy. [cite: 35] [cite_start]Fine-tuned a pre-trained language model with data specific to FSTT and used LangChain for component orchestration. [cite: 36] [cite_start]Technologies: NLP, LLMs, Fine-tuning, RAG, LangChain, ChromaDB, React, FastAPI. [cite: 37]</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/assets/téléchargement.png" alt="Desktop application for analyzing data sets">
                 <div class="overlay">
                     <h2>Desktop application for analyzing data sets</h2>
+                    <p>Details about this project will go here.</p>
                 </div>
             </div>
             <div class="project">
-                <img src="assets/assets/images.jpeg" alt="Project 1">
+                <img src="assets/assets/images.jpeg" alt="Real-time sentiment prediction of Twitter social network data feeds">
                 <div class="overlay">
                     <h2>Real-time sentiment prediction of Twitter social network data feeds</h2>
+                    <p>Details about this project will go here.</p>
                 </div>
             </div>
-            <div class="project">
-                <img src="assets/assets/téléchargement (9).png" alt="Project 1">
-                <div class="overlay">
-                    <h2>NLP Chatbot Project for FSTT</h2>
-                </div>
+        </div>
+    </div>
+
+    <div id="certifications" class="section">
+        <h1><b>Certifications</b></h1>
+        <div class="certifications-container">
+            <div class="certification-item">
+                [cite_start]<h3>Oracle AI Vector Search Professional [cite: 53]</h3>
+                [cite_start]<p>Oracle University [cite: 56]</p>
+                [cite_start]<p>May 2025 [cite: 53]</p>
             </div>
-            <div class="project">
-                <img src="assets/assets/téléchargement (10).png" alt="Project 1">
-                <div class="overlay">
-                    <h2>Machine Learning Specialization Certificate
-                    </h2>
-                </div>
+            <div class="certification-item">
+                [cite_start]<h3>Fundamentals of AI Agents [cite: 54]</h3>
+                [cite_start]<p>Hugging Face [cite: 54]</p>
+                [cite_start]<p>April 2025 [cite: 54]</p>
+            </div>
+            <div class="certification-item">
+                [cite_start]<h3>Machine Learning Specialization [cite: 55]</h3>
+                [cite_start]<p>Coursera & Deeplearning.AI & Stanford University [cite: 57, 58]</p>
+                [cite_start]<p>April 2024 [cite: 55]</p>
             </div>
         </div>
     </div>
 
     <div id="formation" class="section">
-        <h1 style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Education</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <h1><b>Education</b></h1>
         <div class="education master">
-            <h2>Master's Degree in Artificial Intelligence & Data Sciences (in progress)</h2>
-            <h3>Faculty of Science and Technology TANGIER, 2023-2025</h3>
-          </div>
-          
+            [cite_start]<h2>Master's Degree in Artificial Intelligence & Data Science [cite: 40]</h2>
+            [cite_start]<h3>Faculty of Science and Technology, Tangier, 2023-2025 [cite: 39, 46]</h3>
+        </div>
         <div class="education bachelor">
-            <h2>Bachelor's Degree in Computer Science</h2>
-            <h3>Faculty of Science and Technology TANGIER, 202262023</h3>
+            [cite_start]<h2>Bachelor's Degree in Computer Engineering [cite: 41]</h2>
+            [cite_start]<h3>Faculty of Science and Technology, Tangier, 2022-2023 [cite: 41, 47, 48]</h3>
         </div>
         <div class="education deust">
-            <h2>Diploma of Scientific and Technical University Studies</h2>
-            <h3>Faculty of Science and Technology TANGIER, 2020-2022</h3>
+            [cite_start]<h2>Diploma of University Scientific and Technical Studies (MIP) [cite: 43]</h2>
+            [cite_start]<h3>Faculty of Science and Technology, Tangier, 2020-2022 [cite: 42, 49, 50]</h3>
             <ul>
-              <li>Mathematics, Computer Science, Physics (MIP)</li>
+                [cite_start]<li>Mathematics, Computer Science, Physics (MIP) [cite: 43]</li>
             </ul>
         </div>
         <div class="education baccalaureate">
-            <h2>Baccalaureate in mathematical sciences A – French option </h2>
-            <h3>Lycée AL MANSOUR EDDAHBI Sidi Kacem, 2019-2020</h3>
+            [cite_start]<h2>Mathematical Sciences Baccalaureate A French Section [cite: 45]</h2>
+            [cite_start]<h3>Al Mansour Eddahbi High School, Sidi Kacem, 2019-2020 [cite: 44, 51]</h3>
         </div>
     </div>
 
     <div id="contact" class="section">
-        <h1 style="color: black; padding-top: 20px; padding-left: 20px; padding-bottom: 20px"><b>Contact</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
+        <h1><b>Contact</b></h1>
         <div class="contact-info">
-            <ul style="list-style: none; padding-left: 25px;">
-                <p>You can contact me via social networks or by email:</p>
-                <li style="padding-bottom: 20px;">
-                    <a href="mailto:amounaela1@gmail.com" style="text-decoration: none; color: black;"><b style="color: #993399">Email :</b> amounaela1@gmail.com</a>
+            <p>You can contact me via social networks or by email:</p>
+            <ul>
+                <li>
+                    [cite_start]<a href="mailto:amounaela1@gmail.com"><b style="color: #993399">Email :</b> amounaela1@gmail.com [cite: 3]</a>
                 </li>
-                <li style="padding-bottom: 20px;">
-                    <a href="https://www.linkedin.com/in/imane-elaoufi" style="text-decoration: none; color: black; padding-bottom: 10px;"><b style="color: #993399">Linkedin:</b>Imane Elaoufi</a>
+                <li>
+                    [cite_start]<a href="https://www.linkedin.com/in/imane-elaoufi"><b style="color: #993399">Linkedin:</b> Imane Elaoufi [cite: 4]</a>
                 </li>
-                <li style="padding-bottom: 20px;">
-                    <a href="https://github.com/IMANEELAOUFI" style="text-decoration: none; color: black; padding-bottom: 10px;"><b style="color: #993399">Github:</b>IMANEELAOUFI</a>
+                <li>
+                    <a href="https://github.com/IMANEELAOUFI"><b style="color: #993399">Github:</b> IMANEELAOUFI</a>
                 </li>
-                
+                <li>
+                    [cite_start]<b style="color: #993399">Phone:</b> (+212) 771-733-388 [cite: 3]
+                </li>
+                <li>
+                    [cite_start]<b style="color: #993399">Location:</b> Tangier, Morocco [cite: 4]
+                </li>
             </ul>
         </div>
     </div>

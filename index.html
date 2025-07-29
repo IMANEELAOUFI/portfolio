@@ -1,229 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imane Elaoufi Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        header {
-            text-align: center;
-            margin-top: 20px;
-            height: 400px;
-            background-color: SlateBlue
-;
-            color: white;
-            
-        }
-        nav {
-            text-align: center;
-            margin-bottom: 50px;
-            background-color: white;
-            height: 10px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imane Elaoufi Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #993399;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #550055;
-        }
-        .container {
-            padding: 0 20px;
-        }
-        .section {
-            margin-bottom: 0.9px;
-        }
-    </style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9fb;
+      color: #333;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      z-index: 1000;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #993399;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px 15px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: white;
+      background-color: #993399;
+      border-radius: 8px;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(to right, #6a1b9a, #8e24aa);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 22px;
+      margin-top: 20px;
+    }
+
+    .container {
+      padding: 30px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section h1 {
+      color: #993399;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      margin-bottom: 20px;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .skills {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skills img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .skills:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .overlay {
+      padding: 15px;
+      background-color: #fff;
+      color: #993399;
+      text-align: center;
+    }
+
+    .project:hover {
+      transform: scale(1.05);
+    }
+
+    .education {
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .education:hover {
+      transform: scale(1.03);
+    }
+
+    .education h2 {
+      margin-bottom: 10px;
+    }
+
+    #contact {
+      background-color: #E6E6FA;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    #contact ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #contact li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #993399;
+    }
+  </style>
 </head>
 <body>
-<nav id="navig">
-    <a href="#accueil">Accueil</a>
-    <a href="#competences">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#Certifications">Certifications</a>
-    <a href="#formation">Eduaction</a>
-    <a href="#contact">Contact</a>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#competences">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#Certifications">Certifications</a>
+  <a href="#formation">Education</a>
+  <a href="#contact">Contact</a>
 </nav>
+
 <header>
-    <h1>Hi👋. I'M IMANE ELAOUFI</h1>
-    <p>ARTIFICIAL INTELLIGENCE & DATA SCIENCE ENGINEER</p>
+  <h1>Hi👋. I'M IMANE ELAOUFI</h1>
+  <p>ARTIFICIAL INTELLIGENCE & DATA SCIENCE ENGINEER</p>
 </header>
 
-
 <div class="container">
-    <div id="accueil" class="section">
-        <div style="display: flex; align-items: center; margin-bottom: 20px; padding-top: 40px;">
-            <img style="height: 500px; width: 400px;" src="assets/assets/WhatsApp Image 2024-06-17 at 18.29.07.jpeg" alt="Profile Picture">
-            <div>
-                <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>About me</b></h1>
-                <p>I am Imane Elaoufi, a laureate in Artificial Intelligence and Data Science from the Faculty of Sciences and Techniques in Tanger. My academic background has equipped me with a strong foundation in programming, mathematics, and data analysis, as well as a deep understanding of AI and machine learning principles. I am passionate about leveraging these skills to solve complex problems and create innovative solutions that can make a real-world impact. As I continue to advance my education, I am eager to apply my knowledge and expertise to projects that push the boundaries of what is possible in the field of AI and data science.</p>
-            </div>
-        </div>
+  <div id="accueil" class="section">
+    <h1>About Me</h1>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+      <img style="height: 300px; border-radius: 12px;" src="assets/assets/WhatsApp Image 2024-06-17 at 18.29.07.jpeg" alt="Profile Picture">
+      <p style="max-width: 700px;">
+        I am Imane Elaoufi, a laureate in Artificial Intelligence and Data Science from the Faculty of Sciences and Techniques in Tanger. My academic background has equipped me with a strong foundation in programming, mathematics, and data analysis, as well as a deep understanding of AI and machine learning principles. I am passionate about leveraging these skills to solve complex problems and create innovative solutions that can make a real-world impact. As I continue to advance my education, I am eager to apply my knowledge and expertise to projects that push the boundaries of what is possible in the field of AI and data science.
+      </p>
     </div>
+  </div>
 
-    <div id="competences" class="section">
-        <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Skills and Qualities</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
-        <div class="skills-container">
-          <div class="skills">
-            <img src="assets/assets/téléchargement (4).png" alt="PHP">
-            
-          </div>
-          <div class="skills">
-            <img src="assets/assets/téléchargement.jpg" alt="PHP">
-            
-          </div>
-          <div class="skills">
-            <img src="assets/assets/téléchargement (3).png" alt="PHP">
-            
-          </div>
-          <div class="skills">
-            <img src="assets/assets/téléchargement (5).png" alt="PHP">
-            
-          </div>
-          <div class="skills">
-            <img src="assets/assets/téléchargement (6).png" alt="PHP">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/téléchargement (7).png" alt="PHP">
-           
-        </div>
-        <div class="skills">
-            <img src="assets/assets/téléchargement (1).jpg" alt="PHP">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/ML.png" alt="ML">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/NLP.png" alt="NLP">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/DTM.png" alt="DTM">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/téléchargement (8).png" alt="PHP">
-            
-        </div>
-        <div class="skills">
-            <img src="assets/assets/kfk.png" alt="KFK">
-            
-        </div>
+  <div id="competences" class="section">
+    <h1>Skills and Qualities</h1>
+    <div class="skills-container">
+      <div class="skills"><img src="assets/assets/téléchargement (4).png" alt="PHP"></div>
+      <div class="skills"><img src="assets/assets/téléchargement.jpg" alt="Python"></div>
+      <div class="skills"><img src="assets/assets/téléchargement (3).png" alt="Java"></div>
+      <div class="skills"><img src="assets/assets/téléchargement (5).png" alt="HTML"></div>
+      <div class="skills"><img src="assets/assets/téléchargement (6).png" alt="CSS"></div>
+      <div class="skills"><img src="assets/assets/téléchargement (7).png" alt="JS"></div>
+      <div class="skills"><img src="assets/assets/téléchargement (1).jpg" alt="C++"></div>
+      <div class="skills"><img src="assets/assets/ML.png" alt="ML"></div>
+      <div class="skills"><img src="assets/assets/NLP.png" alt="NLP"></div>
+      <div class="skills"><img src="assets/assets/DTM.png" alt="DTM"></div>
+      <div class="skills"><img src="assets/assets/téléchargement (8).png" alt="Git"></div>
+      <div class="skills"><img src="assets/assets/kfk.png" alt="Kafka"></div>
+    </div>
+  </div>
+
+  <div id="experience" class="section">
+    <h1>Professional Experience / Study Projects</h1>
+    <div class="experience">
+      <div class="project">
+        <img src="assets/assets/exp.png" alt="Project">
+        <div class="overlay">
+          <h2>AI-Driven Workflow Automation</h2>
         </div>
       </div>
-    
-
-    <div id="experience" class="section">
-        <h1 style="color: #993399; padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Professional experience / Study projects</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
-        <div class="experience">
-            <div class="project">
-                <img src="assets/assets/exp.png" alt="Project 1">
-                <div class="overlay">
-                    <h2>End-Of-Study internship "AI-Driven Workflow Automation For Business Requests"</h2>
-                </div>
-            </div>
-            <div class="project">
-                <img src="assets/assets/téléchargement.jpeg" alt="Project 1">
-                <div class="overlay">
-                    <h2>End-Of-Year internship "Artificial Intelligence Systems - Facial Emotion Recognition and Sign Language Translation"</h2>
-                </div>
-            </div>
-            <div class="project">
-                <img src="assets/assets/téléchargement.jpeg" alt="Project 1">
-                <div class="overlay">
-                    <h2>End-Of-Study internship "Mobile application for closed circuit communication"</h2>
-                </div>
-            </div>
-            <div class="project">
-                <img src="assets/assets/téléchargement.png" alt="Project 1">
-                <div class="overlay">
-                    <h2>Desktop application for analyzing data sets</h2>
-                </div>
-            </div>
-            <div class="project">
-                <img src="assets/assets/images.jpeg" alt="Project 1">
-                <div class="overlay">
-                    <h2>Real-time sentiment prediction of Twitter social network data feeds</h2>
-                </div>
-            </div>
-            <div class="project">
-                <img src="assets/assets/téléchargement (9).png" alt="Project 1">
-                <div class="overlay">
-                    <h2>NLP Chatbot Project for FSTT</h2>
-                </div>
-            </div>
+      <div class="project">
+        <img src="assets/assets/téléchargement.jpeg" alt="Project">
+        <div class="overlay">
+          <h2>Facial Emotion Recognition & Sign Language Translation</h2>
         </div>
+      </div>
+      <div class="project">
+        <img src="assets/assets/téléchargement.jpeg" alt="Project">
+        <div class="overlay">
+          <h2>Mobile App for Closed Circuit Communication</h2>
+        </div>
+      </div>
+      <div class="project">
+        <img src="assets/assets/téléchargement.png" alt="Project">
+        <div class="overlay">
+          <h2>Data Analysis Desktop App</h2>
+        </div>
+      </div>
+      <div class="project">
+        <img src="assets/assets/images.jpeg" alt="Project">
+        <div class="overlay">
+          <h2>Real-Time Twitter Sentiment Prediction</h2>
+        </div>
+      </div>
+      <div class="project">
+        <img src="assets/assets/téléchargement (9).png" alt="Project">
+        <div class="overlay">
+          <h2>NLP Chatbot for FSTT</h2>
+        </div>
+      </div>
     </div>
+  </div>
 
-     <div id="Certifications" class="section">
-        <h1 style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Certifications</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
-        <div class="education master">
-            <h2>Oracle AI Vector Search Professional</h2>
-            <h3>Oracle, May 2025</h3>
-          </div>
-          
-        <div class="education bachelor">
-            <h2>Fundamentals of AI Agents</h2>
-            <h3>Hugging Face, April 2025</h3>
-        </div>
-        <div class="education deust">
-            <h2>Machine Learning Specialization</h2>
-            <h3>Coursera & Deeplearning.AI and Stanford University, April 2024</h3>
-        </div>
+  <div id="Certifications" class="section">
+    <h1>Certifications</h1>
+    <div class="education">
+      <h2>Oracle AI Vector Search Professional</h2>
+      <h3>Oracle, May 2025</h3>
     </div>
+    <div class="education">
+      <h2>Fundamentals of AI Agents</h2>
+      <h3>Hugging Face, April 2025</h3>
+    </div>
+    <div class="education">
+      <h2>Machine Learning Specialization</h2>
+      <h3>Coursera & Deeplearning.AI and Stanford University, April 2024</h3>
+    </div>
+  </div>
 
-    <div id="formation" class="section">
-        <h1 style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px; color: black;"><b>Education</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
-        <div class="education master">
-            <h2>Master's Degree in Artificial Intelligence & Data Sciences</h2>
-            <h3>Faculty of Science and Technology TANGIER, 2023-2025</h3>
-          </div>
-          
-        <div class="education bachelor">
-            <h2>Bachelor's Degree in Computer Science</h2>
-            <h3>Faculty of Science and Technology TANGIER, 202262023</h3>
-        </div>
-        <div class="education deust">
-            <h2>Diploma of Scientific and Technical University Studies</h2>
-            <h3>Faculty of Science and Technology TANGIER, 2020-2022</h3>
-            <ul>
-              <li>Mathematics, Computer Science, Physics (MIP)</li>
-            </ul>
-        </div>
-        <div class="education baccalaureate">
-            <h2>Baccalaureate in mathematical sciences A – French option </h2>
-            <h3>Lycée AL MANSOUR EDDAHBI Sidi Kacem, 2019-2020</h3>
-        </div>
+  <div id="formation" class="section">
+    <h1>Education</h1>
+    <div class="education">
+      <h2>Master's Degree in AI & Data Sciences</h2>
+      <h3>FST Tanger, 2023-2025</h3>
     </div>
+    <div class="education">
+      <h2>Bachelor's Degree in Computer Science</h2>
+      <h3>FST Tanger, 2020-2023</h3>
+    </div>
+    <div class="education">
+      <h2>DEUST in Math, Info, Physics</h2>
+      <h3>FST Tanger, 2020-2022</h3>
+    </div>
+    <div class="education">
+      <h2>Baccalaureate - Mathematical Sciences A</h2>
+      <h3>Lycée Al Mansour Eddahbi, 2019-2020</h3>
+    </div>
+  </div>
 
-    <div id="contact" class="section">
-        <h1 style="color: black; padding-top: 20px; padding-left: 20px; padding-bottom: 20px"><b>Contact</b></br><p>____________________________________________________________________________________________________________________________</p></h1>
-        <div class="contact-info">
-            <ul style="list-style: none; padding-left: 25px;">
-                <p>You can contact me via social networks or by email:</p>
-                <li style="padding-bottom: 20px;">
-                    <a href="mailto:amounaela1@gmail.com" style="text-decoration: none; color: black;"><b style="color: #993399">Email :</b> amounaela1@gmail.com</a>
-                </li>
-                <li style="padding-bottom: 20px;">
-                    <a href="https://www.linkedin.com/in/imane-elaoufi-024451254/" style="text-decoration: none; color: black; padding-bottom: 10px;"><b style="color: #993399">Linkedin:</b>Imane Elaoufi</a>
-                </li>
-                <li style="padding-bottom: 20px;">
-                    <a href="https://github.com/IMANEELAOUFI" style="text-decoration: none; color: black; padding-bottom: 10px;"><b style="color: #993399">Github:</b>IMANEELAOUFI</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+  <div id="contact" class="section">
+    <h1>Contact</h1>
+    <ul>
+      <li><b>Email:</b> <a href="mailto:amounaela1@gmail.com">amounaela1@gmail.com</a></li>
+      <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/imane-elaoufi-024451254/">Imane Elaoufi</a></li>
+      <li><b>GitHub:</b> <a href="https://github.com/IMANEELAOUFI">IMANEELAOUFI</a></li>
+    </ul>
+  </div>
 </div>
 
 </body>
